@@ -4,8 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// console.log('++++++')
-// console.log(process.env.CLIENT_EMAIL)
+console.log('++++++')
+console.log(process.env.CLIENT_EMAIL)
+
+console.log('++++++')
+console.log(process.env.PRIVATE_KEY)
+
+console.log('++++++')
+console.log(process.env.VIEW_ID)
 
 var indexRouter = require('./routes/index');
 
