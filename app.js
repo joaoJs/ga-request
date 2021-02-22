@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const privateKey = process.env.PRIVATE_KEY.replace(/\\n/g, '\n');
+
 console.log('++++++')
 console.log(process.env.CLIENT_EMAIL)
 
@@ -12,6 +14,9 @@ console.log(process.env.PRIVATE_KEY)
 
 console.log('++++++')
 console.log(process.env.VIEW_ID)
+
+console.log('++++++')
+console.log(privateKey)
 
 var indexRouter = require('./routes/index');
 

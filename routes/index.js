@@ -4,9 +4,11 @@ var router = express.Router();
 require('dotenv').config()
 const {google} = require('googleapis');
 
-const scopes = 'https://www.googleapis.com/auth/analytics.readonly'
+const scopes = ['https://www.googleapis.com/auth/analytics.readonly']
 
-const jwt = new google.auth.JWT(process.env.CLIENT_EMAIL, null, process.env.PRIVATE_KEY, scopes)
+const privateKey = process.env.PRIVATE_KEY.replace(/\\n/g, '\n');
+
+const jwt = new google.auth.JWT(process.env.CLIENT_EMAIL, null, privateKey, scopes)
 
 
 /* GET home page. */
