@@ -6,10 +6,11 @@ const {google} = require('googleapis');
 
 const scopes = 'https://www.googleapis.com/auth/analytics.readonly'
 
+const jwt = new google.auth.JWT(process.env.CLIENT_EMAIL, null, process.env.PRIVATE_KEY, scopes)
+
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-  const jwt = new google.auth.JWT(process.env.CLIENT_EMAIL, null, process.env.PRIVATE_KEY, scopes)
 
   const defaults = {
     'auth': jwt,
@@ -28,7 +29,6 @@ router.get('/', async function(req, res, next) {
 });
 
 router.get('/browser', async function(req, res, next) {
-  const jwt = new google.auth.JWT(process.env.CLIENT_EMAIL, null, process.env.PRIVATE_KEY, scopes)
 
   const defaults = {
     'auth': jwt,
