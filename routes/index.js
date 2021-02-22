@@ -12,6 +12,9 @@ const jwt = new google.auth.JWT(process.env.CLIENT_EMAIL, null, process.env.PRIV
 /* GET home page. */
 router.get('/', async function(req, res, next) {
 
+  console.log("++++++++++==========++++++++++")
+  console.log(process.env.PRIVATE_KEY);
+
   const defaults = {
     'auth': jwt,
     'ids': 'ga:' + process.env.VIEW_ID,
