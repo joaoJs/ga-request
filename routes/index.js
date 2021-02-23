@@ -24,13 +24,13 @@ router.get('/', async function(req, res, next) {
     'end-date': 'today',
     'metrics': 'rt:activeUsers',
   })
-  //console.log(result)
+  // responseURL on the result
+  console.log(result)
   if (result.data.rows) {
     res.send(result.data.rows[0][0])
   } else {
     res.send('0');
   }
-  // console.dir(result.data.rows.sort((a, b) => b[1] - a[1]))
 });
 
 router.get('/browser', async function(req, res, next) {
@@ -74,7 +74,6 @@ router.get('/blue', async function(req, res, next) {
     res.send('0');
   }
   
-  // console.dir(result.data.rows.sort((a, b) => b[1] - a[1]))
 });
 
 router.get('/blue/browser', async function(req, res, next) {
@@ -91,7 +90,7 @@ router.get('/blue/browser', async function(req, res, next) {
     'dimensions': 'ga:browser',
     'metrics': 'ga:sessions'
   })
-  //console.log(result);
+  console.log(result);
   if (result.data.rows) {
     res.send(result.data.rows.sort((a, b) => b[1] - a[1]))
   } else {
